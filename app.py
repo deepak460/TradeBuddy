@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify
 from flask_cors import CORS
 import json
 
@@ -7,11 +7,6 @@ app = Flask(__name__)
 
 # Configure CORS
 CORS(app, resources={r"/api/*": {"origins": "*"}})  # This enables CORS for all origins for any routes that begin with "/api/"
-
-# Define a basic route to serve the home page
-@app.route('/')
-def home():
-    return render_template('index.html')
 
 # Define a route to provide stock data, note the route begins with '/api/' to match the CORS configuration
 @app.route('/api/stocks/<type>')
@@ -22,4 +17,3 @@ def stocks(type):
         return jsonify(data.get(type, []))  # Return an empty list if type is not found
     except Exception as e:
         return jsonify({'error': str(e)}), 404
-
