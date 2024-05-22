@@ -23,6 +23,3 @@ def stocks(type):
     except Exception as e:
         return jsonify({'error': str(e)}), 404
 
-# Run the app
-if __name__ == '__main__':
-    app.run(debug=True)
