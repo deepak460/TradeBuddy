@@ -30,3 +30,4 @@ websocket-client==1.6.0
 zope.interface==6.0
 gunicorn
 flask
+flask_cors
