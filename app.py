@@ -103,7 +103,7 @@ def run():
 
 # Schedule the run function to run once a day at 4 PM
 scheduler = BackgroundScheduler()
-scheduler.add_job(run, 'cron', hour=16, minute=0)
+scheduler.add_job(run, 'cron', hour=22, minute=23)
 scheduler.start()
 
 # if __name__ == '__main__':
